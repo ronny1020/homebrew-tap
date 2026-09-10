@@ -8,8 +8,10 @@ cask "muster" do
   url "https://github.com/ronny1020/muster/releases/download/v#{version}/Muster_#{version}_#{arch}.dmg"
 
   # Without this the cask is invalid on Linux: `arch` resolves to nil there, so
-  # `sha256` does too, and `brew tap` refuses the whole tap over it.
-  depends_on macos: ">= :catalina"
+  # `sha256` does too, and `brew tap` refuses the whole tap over it. A bare
+  # `:macos` is the only accepted form — Homebrew 6 disabled the versioned
+  # `depends_on macos:` with no replacement.
+  depends_on :macos
 
   name "Muster"
   desc "Run AI agent CLIs in tabs, each a real terminal with its own git state"

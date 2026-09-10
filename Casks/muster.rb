@@ -7,6 +7,10 @@ cask "muster" do
 
   url "https://github.com/ronny1020/muster/releases/download/v#{version}/Muster_#{version}_#{arch}.dmg"
 
+  # Without this the cask is invalid on Linux: `arch` resolves to nil there, so
+  # `sha256` does too, and `brew tap` refuses the whole tap over it.
+  depends_on macos: ">= :catalina"
+
   name "Muster"
   desc "Run AI agent CLIs in tabs, each a real terminal with its own git state"
   homepage "https://github.com/ronny1020/muster"

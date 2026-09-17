@@ -1,9 +1,9 @@
 cask "muster" do
-  version "0.2.1"
+  version "0.3.0"
   arch arm: "aarch64", intel: "x64"
 
-  sha256 arm:   "4f2a813ea4bd2b39bbfed492429be8d22e528223f1ee61d7b1dbcab81302e454",
-         intel: "d34769abaf11f2c6ddc4bb3cfb124ae9df4eb0081342dc1710304fd42d4ff017"
+  sha256 arm:   "9647d9209215cac31ceed29e5d6a8cf587f243638ff816d54a06dae9768e20ae",
+         intel: "9cbd4edd966fb336466b25c45d2d614362f233760b2712fd1904b2ffdd5370ed"
 
   url "https://github.com/ronny1020/muster/releases/download/v#{version}/Muster_#{version}_#{arch}.dmg"
 
